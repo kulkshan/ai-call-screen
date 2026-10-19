@@ -1,0 +1,20 @@
+{
+  "version": "baseline-development-1000-v1",
+  "record_count": 1000,
+  "seed": 20260930,
+  "source_dataset": "call-screen-simulated-v1.jsonl",
+  "source_sha256": "8602399e0bb108dfa0132936962e219b95ab5635705002f99d4be6d016a52373",
+  "sha256": "d13d80f3ab185fbb5fc3d8fb0d3c8aaa10c701d856c12c7cfa9e39510919c2c3",
+  "selection": "Fixed stratified sample from the development split.",
+  "quotas": {
+    "harmful": 400,
+    "normal": 400,
+    "unclear": 200
+  },
+  "counts": {
+    "harmful": 400,
+    "normal": 400,
+    "unclear": 200
+  },
+  "provenance": "Subset of the programmatic simulated Call Screen corpus. No Gemini or Twilio calls were made."
+}

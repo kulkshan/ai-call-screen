@@ -1,0 +1,23 @@
+{
+  "version": "multisignal-demo-v1",
+  "weights": {
+    "transcript_risk": 0.86,
+    "caller_reputation": 0.07,
+    "prior_spam_reports": 0.05,
+    "call_frequency": 0.03,
+    "known_contact_adjustment": -0.1
+  },
+  "normalization": {
+    "prior_spam_reports_cap": 5,
+    "recent_call_frequency_cap": 8
+  },
+  "thresholds": {
+    "continue_screening": 0.35,
+    "warn": 0.65,
+    "block": 0.85
+  },
+  "notes": {
+    "weights": "Initial prototype settings. Transcript evidence has the largest weight because caller signals are simulated. These values are not learned from production data and must be calibrated against reviewed outcomes before deployment.",
+    "thresholds": "Initial product-policy settings. They are intentionally external to code so an evaluation can compare alternatives without changing the classifier."
+  }
+}

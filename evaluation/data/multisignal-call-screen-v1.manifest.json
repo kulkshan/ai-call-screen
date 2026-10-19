@@ -1,0 +1,17 @@
+{
+  "version": "multisignal-call-screen-v1",
+  "record_count": 1000,
+  "sha256": "9f9b51b1ed55535d4310fb2c59d20fa0a52d0d45d5edf48b0350248c5323e287",
+  "counts_by_expected_action": {
+    "ALLOW": 250,
+    "CONTINUE_SCREENING": 250,
+    "WARN": 250,
+    "BLOCK": 250
+  },
+  "provenance": "Programmatic simulated test cases. No real callers, phone numbers, Twilio events, or Gemini outputs.",
+  "limitations": [
+    "Caller context is simulated and is not a real reputation service.",
+    "Expected actions are author-assigned for a controlled product test.",
+    "This set cannot estimate real-world scam prevalence or production performance."
+  ]
+}

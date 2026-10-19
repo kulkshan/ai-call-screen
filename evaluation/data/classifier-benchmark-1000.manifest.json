@@ -1,0 +1,45 @@
+{
+  "version": "classifier-benchmark-1000-v1",
+  "record_count": 1000,
+  "sha256": "877cf726fb37c09543dbec69146a7823c50c794365ca61f7ded8f94782441e77",
+  "splits": {
+    "train": 600,
+    "validation": 200,
+    "test": 200
+  },
+  "call_types": {
+    "harmful": 400,
+    "normal": 400,
+    "unclear": 200
+  },
+  "families": {
+    "bank_otp": 50,
+    "gift_card_payment": 50,
+    "remote_access": 50,
+    "safe_account_transfer": 50,
+    "government_threat": 50,
+    "crypto_investment": 50,
+    "delivery_payment_phish": 50,
+    "romance_or_family_emergency": 50,
+    "appointment_reminder": 50,
+    "delivery_notice": 50,
+    "school_message": 50,
+    "service_visit": 50,
+    "community_event": 50,
+    "account_information": 50,
+    "medical_result_ready": 50,
+    "scam_warning": 50,
+    "vague_account": 50,
+    "vague_service": 50,
+    "generic_callback": 50,
+    "identity_only": 50
+  },
+  "training_contract": "Weights use train only. Calibration uses validation only. Metrics use test only.",
+  "inference_contract": "Only raw transcript text is passed to the classifier. Labels and expected decisions are evaluation fields.",
+  "provenance": "Programmatically generated fictional calls. No real callers or production traffic.",
+  "limitations": [
+    "Synthetic language cannot establish real-world performance.",
+    "Labels are assigned by scenario design, not independent human review.",
+    "The class mix is balanced for evaluation and does not estimate scam prevalence."
+  ]
+}

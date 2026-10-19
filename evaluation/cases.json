@@ -1,0 +1,240 @@
+{
+  "version": "synthetic-pilot-v1",
+  "provenance": "Manually authored fictional transcripts; author-assigned labels; not real calls or independent adjudication.",
+  "records": [
+    {
+      "id": "otp-1",
+      "family": "otp",
+      "split": "development",
+      "label": 1,
+      "expected_decision": "BLOCK",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "This is your bank. Read me the login code we sent you."
+        }
+      ]
+    },
+    {
+      "id": "otp-2",
+      "family": "otp",
+      "split": "development",
+      "label": 1,
+      "expected_decision": "BLOCK",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "I work in fraud prevention. Tell me your one-time password so I can cancel a payment."
+        }
+      ]
+    },
+    {
+      "id": "gift_card-1",
+      "family": "gift_card",
+      "split": "development",
+      "label": 1,
+      "expected_decision": "BLOCK",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "Your tax bill must be paid with gift cards. Read me the card numbers."
+        }
+      ]
+    },
+    {
+      "id": "gift_card-2",
+      "family": "gift_card",
+      "split": "development",
+      "label": 1,
+      "expected_decision": "BLOCK",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "Buy gift cards now and send the redemption codes to avoid arrest."
+        }
+      ]
+    },
+    {
+      "id": "appointment-1",
+      "family": "appointment",
+      "split": "development",
+      "label": 0,
+      "expected_decision": "CONNECT",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "Your dental appointment is tomorrow at ten. Call our usual number to reschedule."
+        }
+      ]
+    },
+    {
+      "id": "appointment-2",
+      "family": "appointment",
+      "split": "development",
+      "label": 0,
+      "expected_decision": "CONNECT",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "This is the clinic reminding you about your appointment. No payment is required."
+        }
+      ]
+    },
+    {
+      "id": "unclear-1",
+      "family": "unclear",
+      "split": "development",
+      "label": null,
+      "expected_decision": "CONTINUE_SCREENING",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "This is your bank."
+        }
+      ]
+    },
+    {
+      "id": "unclear-2",
+      "family": "unclear",
+      "split": "development",
+      "label": null,
+      "expected_decision": "CONTINUE_SCREENING",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "I am calling about your account."
+        }
+      ]
+    },
+    {
+      "id": "remote_access-1",
+      "family": "remote_access",
+      "split": "held_out",
+      "label": 1,
+      "expected_decision": "BLOCK",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "Install this remote access app and give me control of your computer to fix your bank account."
+        }
+      ]
+    },
+    {
+      "id": "remote_access-2",
+      "family": "remote_access",
+      "split": "held_out",
+      "label": 1,
+      "expected_decision": "BLOCK",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "Let me remotely control your device while you sign into online banking."
+        }
+      ]
+    },
+    {
+      "id": "safe_account-1",
+      "family": "safe_account",
+      "split": "held_out",
+      "label": 1,
+      "expected_decision": "BLOCK",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "Move your savings to the safe account I provide immediately."
+        }
+      ]
+    },
+    {
+      "id": "safe_account-2",
+      "family": "safe_account",
+      "split": "held_out",
+      "label": 1,
+      "expected_decision": "BLOCK",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "Your money is at risk. Transfer all of it to my secure holding account."
+        }
+      ]
+    },
+    {
+      "id": "warning-1",
+      "family": "warning",
+      "split": "held_out",
+      "label": 0,
+      "expected_decision": "CONNECT",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "This is a security reminder: never read a verification code to anyone who calls you."
+        }
+      ]
+    },
+    {
+      "id": "warning-2",
+      "family": "warning",
+      "split": "held_out",
+      "label": 0,
+      "expected_decision": "CONNECT",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "Someone asked me for gift card codes. I am calling to warn you about that scam."
+        }
+      ]
+    },
+    {
+      "id": "delivery-1",
+      "family": "delivery",
+      "split": "held_out",
+      "label": 0,
+      "expected_decision": "CONNECT",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "I have your delivery at the front desk. You can collect it whenever convenient."
+        }
+      ]
+    },
+    {
+      "id": "delivery-2",
+      "family": "delivery",
+      "split": "held_out",
+      "label": 0,
+      "expected_decision": "CONNECT",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "Your parcel is available at our usual pickup desk. There is no fee."
+        }
+      ]
+    },
+    {
+      "id": "ambiguous-1",
+      "family": "ambiguous",
+      "split": "held_out",
+      "label": null,
+      "expected_decision": "CONTINUE_SCREENING",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "We need to sort something out."
+        }
+      ]
+    },
+    {
+      "id": "ambiguous-2",
+      "family": "ambiguous",
+      "split": "held_out",
+      "label": null,
+      "expected_decision": "CONTINUE_SCREENING",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "Could you help me with an issue?"
+        }
+      ]
+    }
+  ]
+}

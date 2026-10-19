@@ -1,0 +1,41 @@
+{
+  "version": "multisignal-controlled-v1",
+  "provenance": "Controlled, simulated test scenarios. Caller context is mock data and no row represents a real person or phone number.",
+  "records": [
+    {
+      "id": "appointment-normal",
+      "name": "Normal appointment call",
+      "caller_context": {"known_contact": true, "caller_reputation_score": 0.05, "prior_spam_reports": 0, "recent_call_frequency": 1},
+      "turns": ["Hello, this is the dental office confirming your appointment tomorrow at ten. Please use our usual number if you need to reschedule."],
+      "expected_decision": "ALLOW"
+    },
+    {
+      "id": "otp-obvious-scam",
+      "name": "Obvious one-time-code scam",
+      "caller_context": {"known_contact": false, "caller_reputation_score": 0.9, "prior_spam_reports": 4, "recent_call_frequency": 8},
+      "turns": ["This is your bank fraud team. Read me the verification code we just sent so we can secure your account."],
+      "expected_decision": "BLOCK"
+    },
+    {
+      "id": "bank-legitimate",
+      "name": "Legitimate bank fraud notice",
+      "caller_context": {"known_contact": true, "caller_reputation_score": 0.08, "prior_spam_reports": 0, "recent_call_frequency": 1},
+      "turns": ["This is a fraud notice from your bank. Please use the number on the back of your card to review an alert. We will not ask for a code on this call."],
+      "expected_decision": "ALLOW"
+    },
+    {
+      "id": "late-turn-scam",
+      "name": "Call that becomes malicious",
+      "caller_context": {"known_contact": false, "caller_reputation_score": 0.55, "prior_spam_reports": 1, "recent_call_frequency": 4},
+      "turns": ["I am calling about an account update.", "Please install the support app so I can control your screen and fix the problem."],
+      "expected_decision": "BLOCK"
+    },
+    {
+      "id": "paraphrased-scam",
+      "name": "Paraphrased payment scam",
+      "caller_context": {"known_contact": false, "caller_reputation_score": 0.7, "prior_spam_reports": 2, "recent_call_frequency": 6},
+      "turns": ["To stop the penalty, purchase prepaid cards at a nearby store and tell me the numbers printed on them."],
+      "expected_decision": "BLOCK"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "version": "call-screen-simulated-v1",
+  "seed": 20260929,
+  "record_count": 10000,
+  "sha256": "8602399e0bb108dfa0132936962e219b95ab5635705002f99d4be6d016a52373",
+  "format": "JSON Lines; one caller turn per record",
+  "provenance": "Programmatic simulated scenarios with scenario-assigned labels. No real callers, Twilio calls, or Gemini outputs.",
+  "sampling": "Stratified evaluation corpus: 4,000 harmful, 4,000 normal, and 2,000 unclear calls. It is not population prevalence.",
+  "splits": {
+    "validation": 1500,
+    "development": 7000,
+    "held_out": 1500
+  },
+  "call_types": {
+    "harmful": 4000,
+    "normal": 4000,
+    "unclear": 2000
+  },
+  "families": {
+    "delivery_payment_phish": 500,
+    "appointment_reminder": 500,
+    "identity_only": 500,
+    "delivery_notice": 500,
+    "gift_card_payment": 500,
+    "service_visit": 500,
+    "crypto_investment": 500,
+    "government_threat": 500,
+    "community_event": 500,
+    "vague_service": 500,
+    "vague_account": 500,
+    "generic_callback": 500,
+    "scam_warning": 500,
+    "medical_result_ready": 500,
+    "school_message": 500,
+    "bank_otp": 500,
+    "safe_account_transfer": 500,
+    "remote_access": 500,
+    "account_information": 500,
+    "romance_or_family_emergency": 500
+  },
+  "limitations": [
+    "Labels are scenario-assigned, not independently adjudicated.",
+    "Synthetic wording cannot measure speech-to-text errors, adversarial adaptation, or population prevalence.",
+    "Precision from this stratified corpus is evaluation precision, not an estimate of production precision.",
+    "This corpus cannot establish causal experiment results."
+  ]
+}

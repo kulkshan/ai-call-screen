@@ -1,0 +1,15 @@
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+classifier/.model-cache/
+*.py[cod]
+.pytest_cache/
+
+node_modules/
+.next/
+out/
+*.log
+backend/data/
+.vercel/

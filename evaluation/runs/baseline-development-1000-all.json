@@ -1,0 +1,1366 @@
+{
+  "dataset_hash": "d13d80f3ab185fbb5fc3d8fb0d3c8aaa10c701d856c12c7cfa9e39510919c2c3",
+  "dataset_version": "baseline-development-1000-v1",
+  "prompt_version": "screen-v2.1",
+  "policy_version": "evidence-gated-v2-25-75",
+  "model": "gemini-3.8-flash",
+  "records": [
+    {
+      "id": "sim-v1-delivery_payment_phish-0360",
+      "family": "delivery_payment_phish",
+      "call_type": "harmful",
+      "label": 1,
+      "expected_decision": "BLOCK",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "I am reaching out now. Read me the code from your bank to complete delivery. Please respond without delay."
+        }
+      ],
+      "source": "programmatic simulated scenario matrix v1",
+      "split": "development",
+      "assessment": {
+        "risk_score": 0.95,
+        "detected_signals": [
+          "requests bank verification code",
+          "links delivery to sharing bank code",
+          "pressures recipient to respond immediately"
+        ],
+        "features": {
+          "financial_impersonation": false,
+          "credential_or_otp_request": true,
+          "urgency_or_pressure": true,
+          "remote_access_request": false,
+          "money_transfer_request": false,
+          "clear_benign_purpose": false,
+          "caller_identity_clear": false,
+          "requested_action_clear": true
+        },
+        "explanation": "The caller is demanding an immediate bank verification code under the guise of completing a delivery. Requesting one-time security codes is a major indicator of fraud.",
+        "sufficient_information": true,
+        "harmful_request": true,
+        "missing_information": "none",
+        "follow_up_question": "",
+        "decision": "BLOCK",
+        "latency_ms": 7895,
+        "model": "gemini-3.8-flash",
+        "provider_attempts": 1,
+        "thinking_level": "low",
+        "prompt_version": "screen-v2.1",
+        "policy_version": "evidence-gated-v2-25-75",
+        "input_tokens": 534,
+        "output_tokens": 231,
+        "total_tokens": 765,
+        "cost_estimate_usd": null
+      }
+    },
+    {
+      "id": "sim-v1-appointment_reminder-0119",
+      "family": "appointment_reminder",
+      "call_type": "normal",
+      "label": 0,
+      "expected_decision": "CONNECT",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "I need to speak with you. A reminder from the clinic. No payment is needed on this call. No response is required now."
+        }
+      ],
+      "source": "programmatic simulated scenario matrix v1",
+      "split": "development",
+      "assessment": {
+        "risk_score": 0.05,
+        "detected_signals": [
+          "informational reminder from clinic",
+          "explicitly states no payment needed"
+        ],
+        "features": {
+          "financial_impersonation": false,
+          "credential_or_otp_request": false,
+          "urgency_or_pressure": false,
+          "remote_access_request": false,
+          "money_transfer_request": false,
+          "clear_benign_purpose": true,
+          "caller_identity_clear": true,
+          "requested_action_clear": true
+        },
+        "explanation": "The caller provides a routine clinic reminder and explicitly notes that no payment or response is needed.",
+        "sufficient_information": true,
+        "harmful_request": false,
+        "missing_information": "none",
+        "follow_up_question": "",
+        "decision": "CONNECT",
+        "latency_ms": 2174,
+        "model": "gemini-3.8-flash",
+        "provider_attempts": 1,
+        "thinking_level": "low",
+        "prompt_version": "screen-v2.1",
+        "policy_version": "evidence-gated-v2-25-75",
+        "input_tokens": 539,
+        "output_tokens": 209,
+        "total_tokens": 748,
+        "cost_estimate_usd": null
+      }
+    },
+    {
+      "id": "sim-v1-vague_service-0388",
+      "family": "vague_service",
+      "call_type": "unclear",
+      "label": null,
+      "expected_decision": "CONTINUE_SCREENING",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "I am getting in touch. I am calling about a service request; It is important. There is an update to discuss."
+        }
+      ],
+      "source": "programmatic simulated scenario matrix v1",
+      "split": "development",
+      "assessment": {
+        "risk_score": 0.45,
+        "detected_signals": [
+          "Vague service request reference",
+          "Missing specific organization or identity",
+          "Unspecified requested action"
+        ],
+        "features": {
+          "financial_impersonation": false,
+          "credential_or_otp_request": false,
+          "urgency_or_pressure": false,
+          "remote_access_request": false,
+          "money_transfer_request": false,
+          "clear_benign_purpose": false,
+          "caller_identity_clear": false,
+          "requested_action_clear": false
+        },
+        "explanation": "The caller mentions an update regarding a service request but does not identify themselves, their company, or what specific action is needed.",
+        "sufficient_information": false,
+        "harmful_request": false,
+        "missing_information": "identity_purpose",
+        "follow_up_question": "Who are you calling on behalf of, and what is the purpose of your call?",
+        "decision": "CONTINUE_SCREENING",
+        "latency_ms": 2414,
+        "model": "gemini-3.8-flash",
+        "provider_attempts": 1,
+        "thinking_level": "low",
+        "prompt_version": "screen-v2.1",
+        "policy_version": "evidence-gated-v2-25-75",
+        "input_tokens": 537,
+        "output_tokens": 225,
+        "total_tokens": 762,
+        "cost_estimate_usd": null
+      }
+    },
+    {
+      "id": "sim-v1-account_information-0380",
+      "family": "account_information",
+      "call_type": "normal",
+      "label": 0,
+      "expected_decision": "CONNECT",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "Good evening. No password or code is requested. A routine notice from the membership desk. The regular portal has more details."
+        }
+      ],
+      "source": "programmatic simulated scenario matrix v1",
+      "split": "development",
+      "assessment": {
+        "risk_score": 0.1,
+        "detected_signals": [
+          "informational routine notice",
+          "explicitly states no password or code needed",
+          "directs to regular portal"
+        ],
+        "features": {
+          "financial_impersonation": false,
+          "credential_or_otp_request": false,
+          "urgency_or_pressure": false,
+          "remote_access_request": false,
+          "money_transfer_request": false,
+          "clear_benign_purpose": true,
+          "caller_identity_clear": true,
+          "requested_action_clear": true
+        },
+        "explanation": "The caller provides a routine informational notice from a membership desk and explicitly disclaims needing any codes or sensitive details. No harmful action is requested.",
+        "sufficient_information": true,
+        "harmful_request": false,
+        "missing_information": "none",
+        "follow_up_question": "",
+        "decision": "CONNECT",
+        "latency_ms": 2366,
+        "model": "gemini-3.8-flash",
+        "provider_attempts": 1,
+        "thinking_level": "low",
+        "prompt_version": "screen-v2.1",
+        "policy_version": "evidence-gated-v2-25-75",
+        "input_tokens": 537,
+        "output_tokens": 228,
+        "total_tokens": 765,
+        "cost_estimate_usd": null
+      }
+    },
+    {
+      "id": "sim-v1-remote_access-0297",
+      "family": "remote_access",
+      "call_type": "harmful",
+      "label": 1,
+      "expected_decision": "BLOCK",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "I am calling from the office. Your device needs immediate support. Let me connect to your device remotely. Please keep this confidential."
+        }
+      ],
+      "source": "programmatic simulated scenario matrix v1",
+      "split": "development",
+      "assessment": {
+        "risk_score": 0.95,
+        "detected_signals": [
+          "unsolicited remote access request",
+          "urgency for technical support",
+          "request for secrecy"
+        ],
+        "features": {
+          "financial_impersonation": false,
+          "credential_or_otp_request": false,
+          "urgency_or_pressure": true,
+          "remote_access_request": true,
+          "money_transfer_request": false,
+          "clear_benign_purpose": false,
+          "caller_identity_clear": false,
+          "requested_action_clear": true
+        },
+        "explanation": "The caller claims an urgent technical issue and directly requests remote access to the recipient's device while demanding confidentiality. This matches common remote-access support scam patterns.",
+        "sufficient_information": true,
+        "harmful_request": true,
+        "missing_information": "none",
+        "follow_up_question": "",
+        "decision": "BLOCK",
+        "latency_ms": 10786,
+        "model": "gemini-3.8-flash",
+        "provider_attempts": 1,
+        "thinking_level": "low",
+        "prompt_version": "screen-v2.1",
+        "policy_version": "evidence-gated-v2-25-75",
+        "input_tokens": 538,
+        "output_tokens": 230,
+        "total_tokens": 768,
+        "cost_estimate_usd": null
+      }
+    },
+    {
+      "id": "sim-v1-remote_access-0269",
+      "family": "remote_access",
+      "call_type": "harmful",
+      "label": 1,
+      "expected_decision": "BLOCK",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "I need to speak with you. Your device needs immediate support. Open the support app so I can control your screen. Do this before the account changes."
+        }
+      ],
+      "source": "programmatic simulated scenario matrix v1",
+      "split": "development",
+      "assessment": {
+        "risk_score": 0.95,
+        "detected_signals": [
+          "requests remote screen control",
+          "creates false urgency regarding device/account"
+        ],
+        "features": {
+          "financial_impersonation": false,
+          "credential_or_otp_request": false,
+          "urgency_or_pressure": true,
+          "remote_access_request": true,
+          "money_transfer_request": false,
+          "clear_benign_purpose": false,
+          "caller_identity_clear": false,
+          "requested_action_clear": true
+        },
+        "explanation": "The caller creates urgency and instructs the recipient to grant remote screen access via a support app. This is a severe security risk commonly associated with tech support scams.",
+        "sufficient_information": true,
+        "harmful_request": true,
+        "missing_information": "none",
+        "follow_up_question": "",
+        "decision": "BLOCK",
+        "latency_ms": 10282,
+        "model": "gemini-3.8-flash",
+        "provider_attempts": 1,
+        "thinking_level": "low",
+        "prompt_version": "screen-v2.1",
+        "policy_version": "evidence-gated-v2-25-75",
+        "input_tokens": 543,
+        "output_tokens": 222,
+        "total_tokens": 765,
+        "cost_estimate_usd": null
+      }
+    },
+    {
+      "id": "sim-v1-community_event-0382",
+      "family": "community_event",
+      "call_type": "normal",
+      "label": 0,
+      "expected_decision": "CONNECT",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "This is a quick call. You do not need to share any information. A reminder from the local library. The regular portal has more details."
+        }
+      ],
+      "source": "programmatic simulated scenario matrix v1",
+      "split": "development",
+      "assessment": {
+        "risk_score": 0.05,
+        "detected_signals": [
+          "explicitly states no information needed",
+          "routine library reminder",
+          "directs to regular portal"
+        ],
+        "features": {
+          "financial_impersonation": false,
+          "credential_or_otp_request": false,
+          "urgency_or_pressure": false,
+          "remote_access_request": false,
+          "money_transfer_request": false,
+          "clear_benign_purpose": true,
+          "caller_identity_clear": true,
+          "requested_action_clear": true
+        },
+        "explanation": "The caller is providing an informational library reminder, explicitly stating that no information is needed and pointing to their standard portal.",
+        "sufficient_information": true,
+        "harmful_request": false,
+        "missing_information": "none",
+        "follow_up_question": "",
+        "decision": "CONNECT",
+        "latency_ms": 3335,
+        "model": "gemini-3.8-flash",
+        "provider_attempts": 1,
+        "thinking_level": "low",
+        "prompt_version": "screen-v2.1",
+        "policy_version": "evidence-gated-v2-25-75",
+        "input_tokens": 541,
+        "output_tokens": 221,
+        "total_tokens": 762,
+        "cost_estimate_usd": null
+      }
+    },
+    {
+      "id": "sim-v1-bank_otp-0401",
+      "family": "bank_otp",
+      "call_type": "harmful",
+      "label": 1,
+      "expected_decision": "BLOCK",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "Hello. Tell me the verification code now \u2014 This is your bank security. The issue is time sensitive."
+        }
+      ],
+      "source": "programmatic simulated scenario matrix v1",
+      "split": "development",
+      "assessment": {
+        "risk_score": 0.98,
+        "detected_signals": [
+          "requests verification code",
+          "claims to be bank security",
+          "creates urgent time pressure"
+        ],
+        "features": {
+          "financial_impersonation": true,
+          "credential_or_otp_request": true,
+          "urgency_or_pressure": true,
+          "remote_access_request": false,
+          "money_transfer_request": false,
+          "clear_benign_purpose": false,
+          "caller_identity_clear": false,
+          "requested_action_clear": true
+        },
+        "explanation": "The caller claims to be bank security and demands an immediate verification code under urgent time pressure.",
+        "sufficient_information": true,
+        "harmful_request": true,
+        "missing_information": "none",
+        "follow_up_question": "",
+        "decision": "BLOCK",
+        "latency_ms": 8835,
+        "model": "gemini-3.8-flash",
+        "provider_attempts": 1,
+        "thinking_level": "low",
+        "prompt_version": "screen-v2.1",
+        "policy_version": "evidence-gated-v2-25-75",
+        "input_tokens": 538,
+        "output_tokens": 214,
+        "total_tokens": 752,
+        "cost_estimate_usd": null
+      }
+    },
+    {
+      "id": "sim-v1-service_visit-0289",
+      "family": "service_visit",
+      "call_type": "normal",
+      "label": 0,
+      "expected_decision": "CONNECT",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "This is a short reminder. the internet installer is confirming a service window. The technician arrives between 8 a.m. and 10 a.m.. The usual team can answer questions."
+        }
+      ],
+      "source": "programmatic simulated scenario matrix v1",
+      "split": "development",
+      "assessment": {
+        "risk_score": 0.05,
+        "detected_signals": [
+          "routine appointment reminder",
+          "no sensitive information requested"
+        ],
+        "features": {
+          "financial_impersonation": false,
+          "credential_or_otp_request": false,
+          "urgency_or_pressure": false,
+          "remote_access_request": false,
+          "money_transfer_request": false,
+          "clear_benign_purpose": true,
+          "caller_identity_clear": true,
+          "requested_action_clear": true
+        },
+        "explanation": "The caller is providing a routine service appointment window reminder and requests no sensitive data or action.",
+        "sufficient_information": true,
+        "harmful_request": false,
+        "missing_information": "none",
+        "follow_up_question": "",
+        "decision": "CONNECT",
+        "latency_ms": 2220,
+        "model": "gemini-3.8-flash",
+        "provider_attempts": 1,
+        "thinking_level": "low",
+        "prompt_version": "screen-v2.1",
+        "policy_version": "evidence-gated-v2-25-75",
+        "input_tokens": 552,
+        "output_tokens": 205,
+        "total_tokens": 757,
+        "cost_estimate_usd": null
+      }
+    },
+    {
+      "id": "sim-v1-crypto_investment-0123",
+      "family": "crypto_investment",
+      "call_type": "harmful",
+      "label": 1,
+      "expected_decision": "BLOCK",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "I am calling with a notice. Your crypto wallet needs verification. Read out the code from your authenticator. Handle this before the deadline."
+        }
+      ],
+      "source": "programmatic simulated scenario matrix v1",
+      "split": "development",
+      "assessment": {
+        "risk_score": 0.95,
+        "detected_signals": [
+          "Requests authenticator security code",
+          "Creates urgency around deadline",
+          "Unsolicited crypto wallet verification notice"
+        ],
+        "features": {
+          "financial_impersonation": true,
+          "credential_or_otp_request": true,
+          "urgency_or_pressure": true,
+          "remote_access_request": false,
+          "money_transfer_request": false,
+          "clear_benign_purpose": false,
+          "caller_identity_clear": false,
+          "requested_action_clear": true
+        },
+        "explanation": "The caller is demanding an authenticator verification code under pressure of a deadline. Asking for two-factor authentication codes is a direct security risk.",
+        "sufficient_information": true,
+        "harmful_request": true,
+        "missing_information": "none",
+        "follow_up_question": "",
+        "decision": "BLOCK",
+        "latency_ms": 7234,
+        "model": "gemini-3.8-flash",
+        "provider_attempts": 1,
+        "thinking_level": "low",
+        "prompt_version": "screen-v2.1",
+        "policy_version": "evidence-gated-v2-25-75",
+        "input_tokens": 540,
+        "output_tokens": 228,
+        "total_tokens": 768,
+        "cost_estimate_usd": null
+      }
+    },
+    {
+      "id": "sim-v1-government_threat-0340",
+      "family": "government_threat",
+      "call_type": "harmful",
+      "label": 1,
+      "expected_decision": "BLOCK",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "I am calling about a recent matter. Pay the fine today using gift cards because your file will be escalated. This must be resolved now."
+        }
+      ],
+      "source": "programmatic simulated scenario matrix v1",
+      "split": "development",
+      "assessment": {
+        "risk_score": 0.98,
+        "detected_signals": [
+          "demands payment via gift cards",
+          "threatens escalation to force immediate payment"
+        ],
+        "features": {
+          "financial_impersonation": false,
+          "credential_or_otp_request": false,
+          "urgency_or_pressure": true,
+          "remote_access_request": false,
+          "money_transfer_request": true,
+          "clear_benign_purpose": false,
+          "caller_identity_clear": false,
+          "requested_action_clear": true
+        },
+        "explanation": "The caller is demanding immediate payment of a fine using gift cards under threat of escalation. Demanding gift cards as a payment method is a concrete harmful request.",
+        "sufficient_information": true,
+        "harmful_request": true,
+        "missing_information": "none",
+        "follow_up_question": "",
+        "decision": "BLOCK",
+        "latency_ms": 2424,
+        "model": "gemini-3.8-flash",
+        "provider_attempts": 1,
+        "thinking_level": "low",
+        "prompt_version": "screen-v2.1",
+        "policy_version": "evidence-gated-v2-25-75",
+        "input_tokens": 540,
+        "output_tokens": 224,
+        "total_tokens": 764,
+        "cost_estimate_usd": null
+      }
+    },
+    {
+      "id": "sim-v1-community_event-0134",
+      "family": "community_event",
+      "call_type": "normal",
+      "label": 0,
+      "expected_decision": "CONNECT",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "I wanted to let you know. The event is on Tuesday. the local library is calling about an event. We are happy to help."
+        }
+      ],
+      "source": "programmatic simulated scenario matrix v1",
+      "split": "development",
+      "assessment": {
+        "risk_score": 0.05,
+        "detected_signals": [
+          "informational call regarding an event",
+          "no sensitive information or action requested"
+        ],
+        "features": {
+          "financial_impersonation": false,
+          "credential_or_otp_request": false,
+          "urgency_or_pressure": false,
+          "remote_access_request": false,
+          "money_transfer_request": false,
+          "clear_benign_purpose": true,
+          "caller_identity_clear": true,
+          "requested_action_clear": true
+        },
+        "explanation": "The caller is providing an informational reminder about an upcoming library event. No sensitive credentials or actions are requested.",
+        "sufficient_information": true,
+        "harmful_request": false,
+        "missing_information": "none",
+        "follow_up_question": "",
+        "decision": "CONNECT",
+        "latency_ms": 4051,
+        "model": "gemini-3.8-flash",
+        "provider_attempts": 1,
+        "thinking_level": "low",
+        "prompt_version": "screen-v2.1",
+        "policy_version": "evidence-gated-v2-25-75",
+        "input_tokens": 540,
+        "output_tokens": 213,
+        "total_tokens": 753,
+        "cost_estimate_usd": null
+      }
+    },
+    {
+      "id": "sim-v1-gift_card_payment-0075",
+      "family": "gift_card_payment",
+      "call_type": "harmful",
+      "label": 1,
+      "expected_decision": "BLOCK",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "I am calling about this now. Your account has an urgent balance. Pay with gift cards to avoid a penalty. Please act immediately."
+        }
+      ],
+      "source": "programmatic simulated scenario matrix v1",
+      "split": "development",
+      "assessment": {
+        "risk_score": 0.98,
+        "detected_signals": [
+          "Demands payment via gift cards",
+          "Uses urgency and threatens penalties"
+        ],
+        "features": {
+          "financial_impersonation": false,
+          "credential_or_otp_request": false,
+          "urgency_or_pressure": true,
+          "remote_access_request": false,
+          "money_transfer_request": true,
+          "clear_benign_purpose": false,
+          "caller_identity_clear": false,
+          "requested_action_clear": true
+        },
+        "explanation": "The caller creates urgency regarding an account balance and explicitly demands payment using gift cards to avoid penalties. Requesting gift cards as payment is a clear indicator of a fraudulent request.",
+        "sufficient_information": true,
+        "harmful_request": true,
+        "missing_information": "none",
+        "follow_up_question": "",
+        "decision": "BLOCK",
+        "latency_ms": 2255,
+        "model": "gemini-3.8-flash",
+        "provider_attempts": 1,
+        "thinking_level": "low",
+        "prompt_version": "screen-v2.1",
+        "policy_version": "evidence-gated-v2-25-75",
+        "input_tokens": 539,
+        "output_tokens": 225,
+        "total_tokens": 764,
+        "cost_estimate_usd": null
+      }
+    },
+    {
+      "id": "sim-v1-vague_service-0060",
+      "family": "vague_service",
+      "call_type": "unclear",
+      "label": null,
+      "expected_decision": "CONTINUE_SCREENING",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "I am reaching out now. There is a problem to sort out; I need more information. Can we talk?"
+        }
+      ],
+      "source": "programmatic simulated scenario matrix v1",
+      "split": "development",
+      "assessment": {
+        "risk_score": 0.4,
+        "detected_signals": [
+          "vague mention of an unspecified problem",
+          "caller identity not provided",
+          "no concrete action requested yet"
+        ],
+        "features": {
+          "financial_impersonation": false,
+          "credential_or_otp_request": false,
+          "urgency_or_pressure": false,
+          "remote_access_request": false,
+          "money_transfer_request": false,
+          "clear_benign_purpose": false,
+          "caller_identity_clear": false,
+          "requested_action_clear": false
+        },
+        "explanation": "The caller vaguely mentions a problem and asks to speak, but does not provide their identity or state the purpose of the call.",
+        "sufficient_information": false,
+        "harmful_request": false,
+        "missing_information": "identity_purpose",
+        "follow_up_question": "Who are you calling on behalf of, and what is the purpose of your call?",
+        "decision": "CONTINUE_SCREENING",
+        "latency_ms": 4330,
+        "model": "gemini-3.8-flash",
+        "provider_attempts": 1,
+        "thinking_level": "low",
+        "prompt_version": "screen-v2.1",
+        "policy_version": "evidence-gated-v2-25-75",
+        "input_tokens": 535,
+        "output_tokens": 226,
+        "total_tokens": 868,
+        "cost_estimate_usd": null
+      }
+    },
+    {
+      "id": "sim-v1-delivery_payment_phish-0474",
+      "family": "delivery_payment_phish",
+      "call_type": "harmful",
+      "label": 1,
+      "expected_decision": "BLOCK",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "I am calling with a reminder. Read me the code from your bank to avoid a return. Respond before it is escalated."
+        }
+      ],
+      "source": "programmatic simulated scenario matrix v1",
+      "split": "development",
+      "assessment": {
+        "risk_score": 0.95,
+        "detected_signals": [
+          "requests bank verification code",
+          "creates urgency under threat of escalation"
+        ],
+        "features": {
+          "financial_impersonation": false,
+          "credential_or_otp_request": true,
+          "urgency_or_pressure": true,
+          "remote_access_request": false,
+          "money_transfer_request": false,
+          "clear_benign_purpose": false,
+          "caller_identity_clear": false,
+          "requested_action_clear": true
+        },
+        "explanation": "The caller is demanding a bank code under pressure of escalation. Requesting bank verification codes poses a critical security risk.",
+        "sufficient_information": true,
+        "harmful_request": true,
+        "missing_information": "none",
+        "follow_up_question": "",
+        "decision": "BLOCK",
+        "latency_ms": 7734,
+        "model": "gemini-3.8-flash",
+        "provider_attempts": 1,
+        "thinking_level": "low",
+        "prompt_version": "screen-v2.1",
+        "policy_version": "evidence-gated-v2-25-75",
+        "input_tokens": 537,
+        "output_tokens": 213,
+        "total_tokens": 750,
+        "cost_estimate_usd": null
+      }
+    },
+    {
+      "id": "sim-v1-bank_otp-0402",
+      "family": "bank_otp",
+      "call_type": "harmful",
+      "label": 1,
+      "expected_decision": "BLOCK",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "Hi. This is the account team security; Tell me the verification code now. The issue is time sensitive."
+        }
+      ],
+      "source": "programmatic simulated scenario matrix v1",
+      "split": "development",
+      "assessment": {
+        "risk_score": 0.95,
+        "detected_signals": [
+          "requests verification code",
+          "creates urgent pressure"
+        ],
+        "features": {
+          "financial_impersonation": false,
+          "credential_or_otp_request": true,
+          "urgency_or_pressure": true,
+          "remote_access_request": false,
+          "money_transfer_request": false,
+          "clear_benign_purpose": false,
+          "caller_identity_clear": false,
+          "requested_action_clear": true
+        },
+        "explanation": "The caller claims to be security and urgently demands an inbound verification code. Asking for one-time verification codes under pressure is a classic scam indicator.",
+        "sufficient_information": true,
+        "harmful_request": true,
+        "missing_information": "none",
+        "follow_up_question": "",
+        "decision": "BLOCK",
+        "latency_ms": 10126,
+        "model": "gemini-3.8-flash",
+        "provider_attempts": 1,
+        "thinking_level": "low",
+        "prompt_version": "screen-v2.1",
+        "policy_version": "evidence-gated-v2-25-75",
+        "input_tokens": 534,
+        "output_tokens": 215,
+        "total_tokens": 749,
+        "cost_estimate_usd": null
+      }
+    },
+    {
+      "id": "sim-v1-delivery_notice-0346",
+      "family": "delivery_notice",
+      "call_type": "normal",
+      "label": 0,
+      "expected_decision": "CONNECT",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "I am calling from the service desk. You can pick it up when convenient. This is a delivery notice. We appreciate your time."
+        }
+      ],
+      "source": "programmatic simulated scenario matrix v1",
+      "split": "development",
+      "assessment": {
+        "risk_score": 0.05,
+        "detected_signals": [
+          "routine package pickup notice",
+          "no sensitive information requested"
+        ],
+        "features": {
+          "financial_impersonation": false,
+          "credential_or_otp_request": false,
+          "urgency_or_pressure": false,
+          "remote_access_request": false,
+          "money_transfer_request": false,
+          "clear_benign_purpose": true,
+          "caller_identity_clear": true,
+          "requested_action_clear": true
+        },
+        "explanation": "The caller is providing a standard delivery notice stating an item is ready for pickup at the recipient's convenience. No sensitive details, credentials, or payments were requested.",
+        "sufficient_information": true,
+        "harmful_request": false,
+        "missing_information": "none",
+        "follow_up_question": "",
+        "decision": "CONNECT",
+        "latency_ms": 2973,
+        "model": "gemini-3.8-flash",
+        "provider_attempts": 1,
+        "thinking_level": "low",
+        "prompt_version": "screen-v2.1",
+        "policy_version": "evidence-gated-v2-25-75",
+        "input_tokens": 539,
+        "output_tokens": 221,
+        "total_tokens": 760,
+        "cost_estimate_usd": null
+      }
+    },
+    {
+      "id": "sim-v1-romance_or_family_emergency-0445",
+      "family": "romance_or_family_emergency",
+      "call_type": "harmful",
+      "label": 1,
+      "expected_decision": "BLOCK",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "This is a courtesy call. Your family member needs urgent help. Send money to this account. Complete the request immediately."
+        }
+      ],
+      "source": "programmatic simulated scenario matrix v1",
+      "split": "development",
+      "assessment": {
+        "risk_score": 0.95,
+        "detected_signals": [
+          "urgent demand to transfer money",
+          "unverified family emergency claim"
+        ],
+        "features": {
+          "financial_impersonation": false,
+          "credential_or_otp_request": false,
+          "urgency_or_pressure": true,
+          "remote_access_request": false,
+          "money_transfer_request": true,
+          "clear_benign_purpose": false,
+          "caller_identity_clear": false,
+          "requested_action_clear": true
+        },
+        "explanation": "The caller creates high urgency claiming a family member needs emergency help and demands an immediate money transfer to a specified account.",
+        "sufficient_information": true,
+        "harmful_request": true,
+        "missing_information": "none",
+        "follow_up_question": "",
+        "decision": "BLOCK",
+        "latency_ms": 3476,
+        "model": "gemini-3.8-flash",
+        "provider_attempts": 1,
+        "thinking_level": "low",
+        "prompt_version": "screen-v2.1",
+        "policy_version": "evidence-gated-v2-25-75",
+        "input_tokens": 536,
+        "output_tokens": 213,
+        "total_tokens": 749,
+        "cost_estimate_usd": null
+      }
+    },
+    {
+      "id": "sim-v1-delivery_notice-0125",
+      "family": "delivery_notice",
+      "call_type": "normal",
+      "label": 0,
+      "expected_decision": "CONNECT",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "I am calling about this now. Your parcel is ready for collection. There is no fee due. No response is required now."
+        }
+      ],
+      "source": "programmatic simulated scenario matrix v1",
+      "split": "development",
+      "assessment": {
+        "risk_score": 0.05,
+        "detected_signals": [
+          "Parcel collection notification",
+          "No fee or immediate action requested"
+        ],
+        "features": {
+          "financial_impersonation": false,
+          "credential_or_otp_request": false,
+          "urgency_or_pressure": false,
+          "remote_access_request": false,
+          "money_transfer_request": false,
+          "clear_benign_purpose": true,
+          "caller_identity_clear": false,
+          "requested_action_clear": true
+        },
+        "explanation": "The caller is providing an informational update regarding a parcel collection with no fees due or sensitive action required.",
+        "sufficient_information": true,
+        "harmful_request": false,
+        "missing_information": "none",
+        "follow_up_question": "",
+        "decision": "CONNECT",
+        "latency_ms": 3940,
+        "model": "gemini-3.8-flash",
+        "provider_attempts": 1,
+        "thinking_level": "low",
+        "prompt_version": "screen-v2.1",
+        "policy_version": "evidence-gated-v2-25-75",
+        "input_tokens": 538,
+        "output_tokens": 209,
+        "total_tokens": 747,
+        "cost_estimate_usd": null
+      }
+    },
+    {
+      "id": "sim-v1-appointment_reminder-0367",
+      "family": "appointment_reminder",
+      "call_type": "normal",
+      "label": 0,
+      "expected_decision": "CONNECT",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "I have some information. the optometrist is confirming your appointment. Please call our usual number to reschedule. There is nothing else needed today."
+        }
+      ],
+      "source": "programmatic simulated scenario matrix v1",
+      "split": "development",
+      "assessment": {
+        "risk_score": 0.05,
+        "detected_signals": [
+          "routine appointment confirmation",
+          "advises calling usual number if rescheduling needed"
+        ],
+        "features": {
+          "financial_impersonation": false,
+          "credential_or_otp_request": false,
+          "urgency_or_pressure": false,
+          "remote_access_request": false,
+          "money_transfer_request": false,
+          "clear_benign_purpose": true,
+          "caller_identity_clear": true,
+          "requested_action_clear": true
+        },
+        "explanation": "The caller is providing a standard optometrist appointment reminder with no sensitive requests or urgent demands.",
+        "sufficient_information": true,
+        "harmful_request": false,
+        "missing_information": "none",
+        "follow_up_question": "",
+        "decision": "CONNECT",
+        "latency_ms": 1999,
+        "model": "gemini-3.8-flash",
+        "provider_attempts": 1,
+        "thinking_level": "low",
+        "prompt_version": "screen-v2.1",
+        "policy_version": "evidence-gated-v2-25-75",
+        "input_tokens": 540,
+        "output_tokens": 210,
+        "total_tokens": 750,
+        "cost_estimate_usd": null
+      }
+    },
+    {
+      "id": "sim-v1-generic_callback-0262",
+      "family": "generic_callback",
+      "call_type": "unclear",
+      "label": null,
+      "expected_decision": "CONTINUE_SCREENING",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "I am calling with an update. Please call me back; This concerns a recent request. We should speak soon."
+        }
+      ],
+      "source": "programmatic simulated scenario matrix v1",
+      "split": "development",
+      "assessment": {
+        "risk_score": 0.4,
+        "detected_signals": [
+          "vague update claim",
+          "call back request"
+        ],
+        "features": {
+          "financial_impersonation": false,
+          "credential_or_otp_request": false,
+          "urgency_or_pressure": false,
+          "remote_access_request": false,
+          "money_transfer_request": false,
+          "clear_benign_purpose": false,
+          "caller_identity_clear": false,
+          "requested_action_clear": false
+        },
+        "explanation": "The caller asks for a callback regarding a recent request but does not identify themselves or specify what the request or update concerns.",
+        "sufficient_information": false,
+        "harmful_request": false,
+        "missing_information": "identity_purpose",
+        "follow_up_question": "Who are you calling on behalf of, and what is the purpose of your call?",
+        "decision": "CONTINUE_SCREENING",
+        "latency_ms": 2394,
+        "model": "gemini-3.8-flash",
+        "provider_attempts": 1,
+        "thinking_level": "low",
+        "prompt_version": "screen-v2.1",
+        "policy_version": "evidence-gated-v2-25-75",
+        "input_tokens": 535,
+        "output_tokens": 213,
+        "total_tokens": 748,
+        "cost_estimate_usd": null
+      }
+    },
+    {
+      "id": "sim-v1-delivery_notice-0370",
+      "family": "delivery_notice",
+      "call_type": "normal",
+      "label": 0,
+      "expected_decision": "CONNECT",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "This is a courtesy call. You can pick it up when convenient. Your delivery is at the front desk. There is nothing else needed today."
+        }
+      ],
+      "source": "programmatic simulated scenario matrix v1",
+      "split": "development",
+      "assessment": {
+        "risk_score": 0.05,
+        "detected_signals": [
+          "informational delivery notification"
+        ],
+        "features": {
+          "financial_impersonation": false,
+          "credential_or_otp_request": false,
+          "urgency_or_pressure": false,
+          "remote_access_request": false,
+          "money_transfer_request": false,
+          "clear_benign_purpose": true,
+          "caller_identity_clear": true,
+          "requested_action_clear": true
+        },
+        "explanation": "The caller is simply providing a routine delivery notification with no sensitive requests or urgent demands.",
+        "sufficient_information": true,
+        "harmful_request": false,
+        "missing_information": "none",
+        "follow_up_question": "",
+        "decision": "CONNECT",
+        "latency_ms": 1938,
+        "model": "gemini-3.8-flash",
+        "provider_attempts": 1,
+        "thinking_level": "low",
+        "prompt_version": "screen-v2.1",
+        "policy_version": "evidence-gated-v2-25-75",
+        "input_tokens": 541,
+        "output_tokens": 197,
+        "total_tokens": 738,
+        "cost_estimate_usd": null
+      }
+    },
+    {
+      "id": "sim-v1-safe_account_transfer-0129",
+      "family": "safe_account_transfer",
+      "call_type": "harmful",
+      "label": 1,
+      "expected_decision": "BLOCK",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "Good afternoon. A suspicious transfer was detected. Send the funds to the account I provide. This is urgent."
+        }
+      ],
+      "source": "programmatic simulated scenario matrix v1",
+      "split": "development",
+      "assessment": {
+        "risk_score": 0.95,
+        "detected_signals": [
+          "claims suspicious transfer detected",
+          "requests sending funds to caller-provided account",
+          "expresses urgency"
+        ],
+        "features": {
+          "financial_impersonation": true,
+          "credential_or_otp_request": false,
+          "urgency_or_pressure": true,
+          "remote_access_request": false,
+          "money_transfer_request": true,
+          "clear_benign_purpose": false,
+          "caller_identity_clear": false,
+          "requested_action_clear": true
+        },
+        "explanation": "The caller claims a suspicious transfer occurred and urgently instructs the recipient to send funds to an account they provide.",
+        "sufficient_information": true,
+        "harmful_request": true,
+        "missing_information": "none",
+        "follow_up_question": "",
+        "decision": "BLOCK",
+        "latency_ms": 1992,
+        "model": "gemini-3.8-flash",
+        "provider_attempts": 1,
+        "thinking_level": "low",
+        "prompt_version": "screen-v2.1",
+        "policy_version": "evidence-gated-v2-25-75",
+        "input_tokens": 534,
+        "output_tokens": 220,
+        "total_tokens": 754,
+        "cost_estimate_usd": null
+      }
+    },
+    {
+      "id": "sim-v1-vague_service-0200",
+      "family": "vague_service",
+      "call_type": "unclear",
+      "label": null,
+      "expected_decision": "CONTINUE_SCREENING",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "I am calling about this now. I am calling about a service request; Please return the call. Please get back to me."
+        }
+      ],
+      "source": "programmatic simulated scenario matrix v1",
+      "split": "development",
+      "assessment": {
+        "risk_score": 0.35,
+        "detected_signals": [
+          "Vague request to call back",
+          "Missing caller identity or organization details",
+          "Unspecified service request"
+        ],
+        "features": {
+          "financial_impersonation": false,
+          "credential_or_otp_request": false,
+          "urgency_or_pressure": false,
+          "remote_access_request": false,
+          "money_transfer_request": false,
+          "clear_benign_purpose": false,
+          "caller_identity_clear": false,
+          "requested_action_clear": false
+        },
+        "explanation": "The caller mentions an unspecified service request and asks for a callback without identifying themselves or providing details. Further information is required to establish caller identity and purpose.",
+        "sufficient_information": false,
+        "harmful_request": false,
+        "missing_information": "identity_purpose",
+        "follow_up_question": "Who are you calling on behalf of, and what is the purpose of your call?",
+        "decision": "CONTINUE_SCREENING",
+        "latency_ms": 2419,
+        "model": "gemini-3.8-flash",
+        "provider_attempts": 1,
+        "thinking_level": "low",
+        "prompt_version": "screen-v2.1",
+        "policy_version": "evidence-gated-v2-25-75",
+        "input_tokens": 538,
+        "output_tokens": 232,
+        "total_tokens": 770,
+        "cost_estimate_usd": null
+      }
+    },
+    {
+      "id": "sim-v1-vague_account-0358",
+      "family": "vague_account",
+      "call_type": "unclear",
+      "label": null,
+      "expected_decision": "CONTINUE_SCREENING",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "I am following up. I need to discuss an account matter; I need to verify a few details. I would appreciate a response."
+        }
+      ],
+      "source": "programmatic simulated scenario matrix v1",
+      "split": "development",
+      "assessment": {
+        "risk_score": 0.45,
+        "detected_signals": [
+          "Vague request to discuss account matter",
+          "Requests verification of unspecified details",
+          "Unidentified caller identity"
+        ],
+        "features": {
+          "financial_impersonation": false,
+          "credential_or_otp_request": false,
+          "urgency_or_pressure": false,
+          "remote_access_request": false,
+          "money_transfer_request": false,
+          "clear_benign_purpose": false,
+          "caller_identity_clear": false,
+          "requested_action_clear": false
+        },
+        "explanation": "The caller mentions an account matter and requests detail verification without identifying themselves or specifying the organization and requested action.",
+        "sufficient_information": false,
+        "harmful_request": false,
+        "missing_information": "identity_purpose",
+        "follow_up_question": "Who are you calling on behalf of, and what is the purpose of your call?",
+        "decision": "CONTINUE_SCREENING",
+        "latency_ms": 2520,
+        "model": "gemini-3.8-flash",
+        "provider_attempts": 1,
+        "thinking_level": "low",
+        "prompt_version": "screen-v2.1",
+        "policy_version": "evidence-gated-v2-25-75",
+        "input_tokens": 539,
+        "output_tokens": 223,
+        "total_tokens": 762,
+        "cost_estimate_usd": null
+      }
+    }
+  ],
+  "errors": [],
+  "status": "partial",
+  "updated_at": "2026-09-30T04:44:52.884929+00:00",
+  "provenance": "Subset of the programmatic simulated Call Screen corpus. No Gemini or Twilio calls were made.",
+  "source_dataset": "baseline-development-1000.jsonl",
+  "selected_split": "development",
+  "selected_total": 1000,
+  "summaries": {
+    "all": {
+      "n": 25,
+      "binary_n": 20,
+      "positives": 11,
+      "negatives": 9,
+      "confusion": {
+        "tp": 11,
+        "fp": 0,
+        "fn": 0,
+        "tn": 9
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "false_positive_rate": 0.0,
+      "decision_accuracy": 1.0,
+      "p50_ms": 2973.0,
+      "p95_ms": 10250.8,
+      "curves": [
+        {
+          "threshold": 1.000001,
+          "tpr": 0.0,
+          "fpr": 0.0,
+          "precision": null
+        },
+        {
+          "threshold": 0.98,
+          "tpr": 0.2727272727272727,
+          "fpr": 0.0,
+          "precision": 1.0
+        },
+        {
+          "threshold": 0.95,
+          "tpr": 1.0,
+          "fpr": 0.0,
+          "precision": 1.0
+        },
+        {
+          "threshold": 0.1,
+          "tpr": 1.0,
+          "fpr": 0.1111111111111111,
+          "precision": 0.9166666666666666
+        },
+        {
+          "threshold": 0.05,
+          "tpr": 1.0,
+          "fpr": 1.0,
+          "precision": 0.55
+        }
+      ]
+    },
+    "development": {
+      "n": 25,
+      "binary_n": 20,
+      "positives": 11,
+      "negatives": 9,
+      "confusion": {
+        "tp": 11,
+        "fp": 0,
+        "fn": 0,
+        "tn": 9
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "false_positive_rate": 0.0,
+      "decision_accuracy": 1.0,
+      "p50_ms": 2973.0,
+      "p95_ms": 10250.8,
+      "curves": [
+        {
+          "threshold": 1.000001,
+          "tpr": 0.0,
+          "fpr": 0.0,
+          "precision": null
+        },
+        {
+          "threshold": 0.98,
+          "tpr": 0.2727272727272727,
+          "fpr": 0.0,
+          "precision": 1.0
+        },
+        {
+          "threshold": 0.95,
+          "tpr": 1.0,
+          "fpr": 0.0,
+          "precision": 1.0
+        },
+        {
+          "threshold": 0.1,
+          "tpr": 1.0,
+          "fpr": 0.1111111111111111,
+          "precision": 0.9166666666666666
+        },
+        {
+          "threshold": 0.05,
+          "tpr": 1.0,
+          "fpr": 1.0,
+          "precision": 0.55
+        }
+      ]
+    },
+    "validation": {
+      "n": 0,
+      "binary_n": 0,
+      "positives": 0,
+      "negatives": 0,
+      "confusion": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 0
+      },
+      "precision": null,
+      "recall": null,
+      "false_positive_rate": null,
+      "decision_accuracy": null,
+      "p50_ms": null,
+      "p95_ms": null,
+      "curves": []
+    },
+    "held_out": {
+      "n": 0,
+      "binary_n": 0,
+      "positives": 0,
+      "negatives": 0,
+      "confusion": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 0
+      },
+      "precision": null,
+      "recall": null,
+      "false_positive_rate": null,
+      "decision_accuracy": null,
+      "p50_ms": null,
+      "p95_ms": null,
+      "curves": []
+    }
+  }
+}

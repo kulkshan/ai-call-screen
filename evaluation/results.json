@@ -1,0 +1,666 @@
+{
+  "status": "simulated",
+  "simulated": true,
+  "dataset_version": "synthetic-pilot-v1",
+  "provenance": "Simulated example calls and outcomes for this demo. No live calls, Twilio, or Gemini were used.",
+  "total": 18,
+  "records": [
+    {
+      "id": "otp-1",
+      "family": "otp",
+      "split": "development",
+      "label": 1,
+      "expected_decision": "BLOCK",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "This is your bank. Read me the login code we sent you."
+        }
+      ],
+      "assessment": {
+        "risk_score": 0.98,
+        "decision": "BLOCK",
+        "detected_signals": [
+          "Bank impersonation",
+          "One-time-code request"
+        ],
+        "explanation": "Simulated result for this demo.",
+        "latency_ms": 590
+      }
+    },
+    {
+      "id": "otp-2",
+      "family": "otp",
+      "split": "development",
+      "label": 1,
+      "expected_decision": "BLOCK",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "I work in fraud prevention. Tell me your one-time password so I can cancel a payment."
+        }
+      ],
+      "assessment": {
+        "risk_score": 0.96,
+        "decision": "BLOCK",
+        "detected_signals": [
+          "One-time-password request",
+          "Fraud-prevention impersonation"
+        ],
+        "explanation": "Simulated result for this demo.",
+        "latency_ms": 640
+      }
+    },
+    {
+      "id": "gift_card-1",
+      "family": "gift_card",
+      "split": "development",
+      "label": 1,
+      "expected_decision": "BLOCK",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "Your tax bill must be paid with gift cards. Read me the card numbers."
+        }
+      ],
+      "assessment": {
+        "risk_score": 0.99,
+        "decision": "BLOCK",
+        "detected_signals": [
+          "Gift-card payment request",
+          "Government impersonation"
+        ],
+        "explanation": "Simulated result for this demo.",
+        "latency_ms": 610
+      }
+    },
+    {
+      "id": "gift_card-2",
+      "family": "gift_card",
+      "split": "development",
+      "label": 1,
+      "expected_decision": "BLOCK",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "Buy gift cards now and send the redemption codes to avoid arrest."
+        }
+      ],
+      "assessment": {
+        "risk_score": 0.97,
+        "decision": "BLOCK",
+        "detected_signals": [
+          "Gift-card redemption request",
+          "Threat and urgency"
+        ],
+        "explanation": "Simulated result for this demo.",
+        "latency_ms": 670
+      }
+    },
+    {
+      "id": "appointment-1",
+      "family": "appointment",
+      "split": "development",
+      "label": 0,
+      "expected_decision": "CONNECT",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "Your dental appointment is tomorrow at ten. Call our usual number to reschedule."
+        }
+      ],
+      "assessment": {
+        "risk_score": 0.07,
+        "decision": "CONNECT",
+        "detected_signals": [
+          "Routine appointment context",
+          "No sensitive request"
+        ],
+        "explanation": "Simulated result for this demo.",
+        "latency_ms": 520
+      }
+    },
+    {
+      "id": "appointment-2",
+      "family": "appointment",
+      "split": "development",
+      "label": 0,
+      "expected_decision": "CONNECT",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "This is the clinic reminding you about your appointment. No payment is required."
+        }
+      ],
+      "assessment": {
+        "risk_score": 0.11,
+        "decision": "CONNECT",
+        "detected_signals": [
+          "Routine appointment context",
+          "No payment or credential request"
+        ],
+        "explanation": "Simulated result for this demo.",
+        "latency_ms": 560
+      }
+    },
+    {
+      "id": "unclear-1",
+      "family": "unclear",
+      "split": "development",
+      "label": null,
+      "expected_decision": "CONTINUE_SCREENING",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "This is your bank."
+        }
+      ],
+      "assessment": {
+        "risk_score": 0.46,
+        "decision": "CONTINUE_SCREENING",
+        "detected_signals": [
+          "Caller identity is vague",
+          "Purpose needs clarification"
+        ],
+        "explanation": "Simulated result for this demo.",
+        "latency_ms": 690
+      }
+    },
+    {
+      "id": "unclear-2",
+      "family": "unclear",
+      "split": "development",
+      "label": null,
+      "expected_decision": "CONTINUE_SCREENING",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "I am calling about your account."
+        }
+      ],
+      "assessment": {
+        "risk_score": 0.51,
+        "decision": "CONTINUE_SCREENING",
+        "detected_signals": [
+          "Account claim is vague",
+          "Purpose needs clarification"
+        ],
+        "explanation": "Simulated result for this demo.",
+        "latency_ms": 710
+      }
+    },
+    {
+      "id": "remote_access-1",
+      "family": "remote_access",
+      "split": "held_out",
+      "label": 1,
+      "expected_decision": "BLOCK",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "Install this remote access app and give me control of your computer to fix your bank account."
+        }
+      ],
+      "assessment": {
+        "risk_score": 0.94,
+        "decision": "BLOCK",
+        "detected_signals": [
+          "Remote-access request",
+          "Financial account pretext"
+        ],
+        "explanation": "Simulated result for this demo.",
+        "latency_ms": 790
+      }
+    },
+    {
+      "id": "remote_access-2",
+      "family": "remote_access",
+      "split": "held_out",
+      "label": 1,
+      "expected_decision": "BLOCK",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "Let me remotely control your device while you sign into online banking."
+        }
+      ],
+      "assessment": {
+        "risk_score": 0.54,
+        "decision": "CONTINUE_SCREENING",
+        "detected_signals": [
+          "Remote-access request",
+          "Needs targeted follow-up"
+        ],
+        "explanation": "Simulated miss: the caller asks for remote access, but the system asks a question instead of stopping the call.",
+        "latency_ms": 860
+      }
+    },
+    {
+      "id": "safe_account-1",
+      "family": "safe_account",
+      "split": "held_out",
+      "label": 1,
+      "expected_decision": "BLOCK",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "Move your savings to the safe account I provide immediately."
+        }
+      ],
+      "assessment": {
+        "risk_score": 0.96,
+        "decision": "BLOCK",
+        "detected_signals": [
+          "Safe-account transfer request",
+          "Urgency"
+        ],
+        "explanation": "Simulated result for this demo.",
+        "latency_ms": 740
+      }
+    },
+    {
+      "id": "safe_account-2",
+      "family": "safe_account",
+      "split": "held_out",
+      "label": 1,
+      "expected_decision": "BLOCK",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "Your money is at risk. Transfer all of it to my secure holding account."
+        }
+      ],
+      "assessment": {
+        "risk_score": 0.93,
+        "decision": "BLOCK",
+        "detected_signals": [
+          "Safe-account transfer request",
+          "Financial loss threat"
+        ],
+        "explanation": "Simulated result for this demo.",
+        "latency_ms": 820
+      }
+    },
+    {
+      "id": "warning-1",
+      "family": "warning",
+      "split": "held_out",
+      "label": 0,
+      "expected_decision": "CONNECT",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "This is a security reminder: never read a verification code to anyone who calls you."
+        }
+      ],
+      "assessment": {
+        "risk_score": 0.18,
+        "decision": "CONNECT",
+        "detected_signals": [
+          "Scam-warning context",
+          "No harmful request"
+        ],
+        "explanation": "Simulated result for this demo.",
+        "latency_ms": 490
+      }
+    },
+    {
+      "id": "warning-2",
+      "family": "warning",
+      "split": "held_out",
+      "label": 0,
+      "expected_decision": "CONNECT",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "Someone asked me for gift card codes. I am calling to warn you about that scam."
+        }
+      ],
+      "assessment": {
+        "risk_score": 0.81,
+        "decision": "BLOCK",
+        "detected_signals": [
+          "Gift-card language",
+          "Warning context was missed"
+        ],
+        "explanation": "Simulated false block: the caller warns about a gift-card scam, but the system stops the call anyway.",
+        "latency_ms": 760
+      }
+    },
+    {
+      "id": "delivery-1",
+      "family": "delivery",
+      "split": "held_out",
+      "label": 0,
+      "expected_decision": "CONNECT",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "I have your delivery at the front desk. You can collect it whenever convenient."
+        }
+      ],
+      "assessment": {
+        "risk_score": 0.08,
+        "decision": "CONNECT",
+        "detected_signals": [
+          "Specific delivery context",
+          "No sensitive request"
+        ],
+        "explanation": "Simulated result for this demo.",
+        "latency_ms": 510
+      }
+    },
+    {
+      "id": "delivery-2",
+      "family": "delivery",
+      "split": "held_out",
+      "label": 0,
+      "expected_decision": "CONNECT",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "Your parcel is available at our usual pickup desk. There is no fee."
+        }
+      ],
+      "assessment": {
+        "risk_score": 0.1,
+        "decision": "CONNECT",
+        "detected_signals": [
+          "Routine pickup context",
+          "No fee or credential request"
+        ],
+        "explanation": "Simulated result for this demo.",
+        "latency_ms": 540
+      }
+    },
+    {
+      "id": "ambiguous-1",
+      "family": "ambiguous",
+      "split": "held_out",
+      "label": null,
+      "expected_decision": "CONTINUE_SCREENING",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "We need to sort something out."
+        }
+      ],
+      "assessment": {
+        "risk_score": 0.47,
+        "decision": "CONTINUE_SCREENING",
+        "detected_signals": [
+          "Purpose is unclear",
+          "Follow-up required"
+        ],
+        "explanation": "Simulated result for this demo.",
+        "latency_ms": 630
+      }
+    },
+    {
+      "id": "ambiguous-2",
+      "family": "ambiguous",
+      "split": "held_out",
+      "label": null,
+      "expected_decision": "CONTINUE_SCREENING",
+      "conversation": [
+        {
+          "role": "caller",
+          "text": "Could you help me with an issue?"
+        }
+      ],
+      "assessment": {
+        "risk_score": 0.43,
+        "decision": "CONTINUE_SCREENING",
+        "detected_signals": [
+          "Purpose is unclear",
+          "Follow-up required"
+        ],
+        "explanation": "Simulated result for this demo.",
+        "latency_ms": 650
+      }
+    }
+  ],
+  "summaries": {
+    "all": {
+      "n": 18,
+      "binary_n": 14,
+      "positives": 8,
+      "negatives": 6,
+      "confusion": {
+        "tp": 7,
+        "fp": 1,
+        "fn": 1,
+        "tn": 5
+      },
+      "precision": 0.875,
+      "recall": 0.875,
+      "false_positive_rate": 0.16666666666666666,
+      "decision_accuracy": 0.8888888888888888,
+      "p50_ms": 645.0,
+      "p95_ms": 826.0,
+      "curves": [
+        {
+          "threshold": 1.000001,
+          "tpr": 0.0,
+          "fpr": 0.0,
+          "precision": null
+        },
+        {
+          "threshold": 0.99,
+          "tpr": 0.125,
+          "fpr": 0.0,
+          "precision": 1.0
+        },
+        {
+          "threshold": 0.98,
+          "tpr": 0.25,
+          "fpr": 0.0,
+          "precision": 1.0
+        },
+        {
+          "threshold": 0.97,
+          "tpr": 0.375,
+          "fpr": 0.0,
+          "precision": 1.0
+        },
+        {
+          "threshold": 0.96,
+          "tpr": 0.625,
+          "fpr": 0.0,
+          "precision": 1.0
+        },
+        {
+          "threshold": 0.94,
+          "tpr": 0.75,
+          "fpr": 0.0,
+          "precision": 1.0
+        },
+        {
+          "threshold": 0.93,
+          "tpr": 0.875,
+          "fpr": 0.0,
+          "precision": 1.0
+        },
+        {
+          "threshold": 0.81,
+          "tpr": 0.875,
+          "fpr": 0.16666666666666666,
+          "precision": 0.875
+        },
+        {
+          "threshold": 0.54,
+          "tpr": 1.0,
+          "fpr": 0.16666666666666666,
+          "precision": 0.8888888888888888
+        },
+        {
+          "threshold": 0.18,
+          "tpr": 1.0,
+          "fpr": 0.3333333333333333,
+          "precision": 0.8
+        },
+        {
+          "threshold": 0.11,
+          "tpr": 1.0,
+          "fpr": 0.5,
+          "precision": 0.7272727272727273
+        },
+        {
+          "threshold": 0.1,
+          "tpr": 1.0,
+          "fpr": 0.6666666666666666,
+          "precision": 0.6666666666666666
+        },
+        {
+          "threshold": 0.08,
+          "tpr": 1.0,
+          "fpr": 0.8333333333333334,
+          "precision": 0.6153846153846154
+        },
+        {
+          "threshold": 0.07,
+          "tpr": 1.0,
+          "fpr": 1.0,
+          "precision": 0.5714285714285714
+        }
+      ]
+    },
+    "development": {
+      "n": 8,
+      "binary_n": 6,
+      "positives": 4,
+      "negatives": 2,
+      "confusion": {
+        "tp": 4,
+        "fp": 0,
+        "fn": 0,
+        "tn": 2
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "false_positive_rate": 0.0,
+      "decision_accuracy": 1.0,
+      "p50_ms": 625.0,
+      "p95_ms": 703.0,
+      "curves": [
+        {
+          "threshold": 1.000001,
+          "tpr": 0.0,
+          "fpr": 0.0,
+          "precision": null
+        },
+        {
+          "threshold": 0.99,
+          "tpr": 0.25,
+          "fpr": 0.0,
+          "precision": 1.0
+        },
+        {
+          "threshold": 0.98,
+          "tpr": 0.5,
+          "fpr": 0.0,
+          "precision": 1.0
+        },
+        {
+          "threshold": 0.97,
+          "tpr": 0.75,
+          "fpr": 0.0,
+          "precision": 1.0
+        },
+        {
+          "threshold": 0.96,
+          "tpr": 1.0,
+          "fpr": 0.0,
+          "precision": 1.0
+        },
+        {
+          "threshold": 0.11,
+          "tpr": 1.0,
+          "fpr": 0.5,
+          "precision": 0.8
+        },
+        {
+          "threshold": 0.07,
+          "tpr": 1.0,
+          "fpr": 1.0,
+          "precision": 0.6666666666666666
+        }
+      ]
+    },
+    "held_out": {
+      "n": 10,
+      "binary_n": 8,
+      "positives": 4,
+      "negatives": 4,
+      "confusion": {
+        "tp": 3,
+        "fp": 1,
+        "fn": 1,
+        "tn": 3
+      },
+      "precision": 0.75,
+      "recall": 0.75,
+      "false_positive_rate": 0.25,
+      "decision_accuracy": 0.8,
+      "p50_ms": 695.0,
+      "p95_ms": 842.0,
+      "curves": [
+        {
+          "threshold": 1.000001,
+          "tpr": 0.0,
+          "fpr": 0.0,
+          "precision": null
+        },
+        {
+          "threshold": 0.96,
+          "tpr": 0.25,
+          "fpr": 0.0,
+          "precision": 1.0
+        },
+        {
+          "threshold": 0.94,
+          "tpr": 0.5,
+          "fpr": 0.0,
+          "precision": 1.0
+        },
+        {
+          "threshold": 0.93,
+          "tpr": 0.75,
+          "fpr": 0.0,
+          "precision": 1.0
+        },
+        {
+          "threshold": 0.81,
+          "tpr": 0.75,
+          "fpr": 0.25,
+          "precision": 0.75
+        },
+        {
+          "threshold": 0.54,
+          "tpr": 1.0,
+          "fpr": 0.25,
+          "precision": 0.8
+        },
+        {
+          "threshold": 0.18,
+          "tpr": 1.0,
+          "fpr": 0.5,
+          "precision": 0.6666666666666666
+        },
+        {
+          "threshold": 0.1,
+          "tpr": 1.0,
+          "fpr": 0.75,
+          "precision": 0.5714285714285714
+        },
+        {
+          "threshold": 0.08,
+          "tpr": 1.0,
+          "fpr": 1.0,
+          "precision": 0.5
+        }
+      ]
+    }
+  },
+  "errors": []
+}

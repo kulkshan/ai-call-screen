@@ -1,0 +1,10 @@
+.nav{width:min(1180px,100%);min-height:64px;margin:0 auto;padding:9px 11px 9px 20px;border:1px solid rgb(255 255 255 / 88%);border-radius:999px;display:flex;align-items:center;justify-content:space-between;gap:22px;position:sticky;top:18px;z-index:20;background:rgb(255 255 255 / 68%);box-shadow:0 16px 44px rgb(38 77 121 / 12%),inset 0 1px 0 white;backdrop-filter:blur(24px) saturate(150%)}
+.brand{display:flex;align-items:center;gap:11px;color:#08234b;text-decoration:none;font-size:15px;font-weight:800;letter-spacing:-.02em;white-space:nowrap}
+.mark{width:27px;height:27px;border:1px solid rgb(71 118 173 / 22%);border-radius:9px;display:grid;place-content:center;background:rgb(232 244 255 / 82%);box-shadow:inset 0 1px 0 white}
+.mark i{display:block;width:12px;height:3px;border-radius:999px;background:#62a6ee;transform:rotate(45deg)}
+.mark i+ i{margin-top:-3px;background:#ff705a;transform:rotate(-45deg)}
+.links{display:flex;align-items:center;gap:4px}
+.links a{padding:11px 15px;border-radius:999px;color:#496783;text-decoration:none;font-size:13px;font-weight:700;white-space:nowrap;transition:background .18s ease,color .18s ease,transform .18s ease}
+.links a:hover{color:#08234b;background:rgb(232 243 255 / 72%);transform:translateY(-1px)}
+.links a.active{color:#08234b;background:rgb(225 240 255 / 90%);box-shadow:inset 0 0 0 1px rgb(83 139 203 / 18%),0 5px 14px rgb(67 111 163 / 10%)}
+@media(max-width:720px){.nav{top:10px;border-radius:25px;align-items:flex-start;flex-direction:column;padding:13px 14px}.links{width:100%;overflow-x:auto;padding-bottom:2px}.links a{padding:9px 11px;font-size:12px}}

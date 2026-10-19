@@ -1,0 +1,46 @@
+{
+  "version": "classifier-benchmark-10000-v2",
+  "record_count": 10000,
+  "sha256": "1a9068cb04a4411ff00c8e118e8db9b1c0b4e7bfe3f88113d66755c0988ef006",
+  "splits": {
+    "train": 6000,
+    "validation": 2000,
+    "test": 2000
+  },
+  "call_types": {
+    "harmful": 4000,
+    "normal": 4000,
+    "unclear": 2000
+  },
+  "families": {
+    "bank_otp": 500,
+    "gift_card_payment": 500,
+    "remote_access": 500,
+    "safe_account_transfer": 500,
+    "government_threat": 500,
+    "crypto_investment": 500,
+    "delivery_payment_phish": 500,
+    "romance_or_family_emergency": 500,
+    "appointment_reminder": 500,
+    "delivery_notice": 500,
+    "school_message": 500,
+    "service_visit": 500,
+    "community_event": 500,
+    "account_information": 500,
+    "medical_result_ready": 500,
+    "scam_warning": 500,
+    "vague_account": 500,
+    "vague_service": 500,
+    "generic_callback": 500,
+    "identity_only": 500
+  },
+  "training_contract": "Weights use 6,000 train calls only. Calibration uses 2,000 validation calls only. Metrics use 2,000 final test calls only.",
+  "group_contract": "Five-call variation groups stay inside one split.",
+  "inference_contract": "Only raw transcript text is passed to the classifier. Labels and expected decisions are evaluation fields.",
+  "provenance": "Programmatically generated fictional calls. No real callers or production traffic.",
+  "limitations": [
+    "Synthetic language cannot establish real-world performance.",
+    "Labels are assigned by scenario design, not independent human review.",
+    "The class mix is balanced for evaluation and does not estimate scam prevalence."
+  ]
+}
