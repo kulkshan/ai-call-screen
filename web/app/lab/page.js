@@ -128,7 +128,7 @@ function Recommendation({report}) {
 function TechnicalDetails({report}) {
   const metrics=report.metrics;
   return <section className={styles.technical} id="technical">
-    <details><summary><span>05 / Technical details</span><strong>Open model evaluation details</strong></summary>
+    <details><summary><span>04 / Technical details</span><strong>Open model evaluation details</strong></summary>
       <div className={styles.technicalBody}>
       <article className={styles.curvePanel}><header><h3>Precision–recall curve</h3><small>FINAL SIMULATED TEST · N={metrics.count}</small></header><div><Curve points={report.pr_curve.points} precision={metrics.precision} recall={metrics.recall}/><aside><strong>{(metrics.precision*100).toFixed(1)} / {(metrics.recall*100).toFixed(1)}</strong><p>Each point changes the classification cutoff. Moving right catches more scams; moving down creates more false alarms.</p><p>The green point is the 50% cutoff.</p><small>AVERAGE PRECISION · {report.pr_curve.average_precision?.toFixed(3)}</small></aside></div></article>
         <ul><li><b>Model:</b> transcript embeddings with a trained and calibrated classification head.</li><li><b>Input:</b> raw transcript text only. Expected labels never enter inference.</li><li><b>Data:</b> fictional generated calls, not production traffic.</li><li><b>Limit:</b> these results cannot estimate real-world Google Call Screen performance.</li></ul>
@@ -157,6 +157,6 @@ export default function Lab() {
     <LabNav active="overview" />
     <header className={styles.hero}><div><span className={styles.kicker}>PRODUCT DATA SCIENCE CASE STUDY</span><h1>Can Call Screen catch scams<br/><em>without blocking real callers?</em></h1><p>I trained the classifier on 10,000 simulated calls and measured whether more varied data catches more scams without creating more false alarms.</p><div className={styles.heroActions}><a className={styles.darkButton} href="#walkthrough">Start with one call ↓</a><a className={styles.outlineButton} href="#system">See how 10,000 calls were used</a></div></div><aside><span>THE DATASET · 10,000 SIMULATED CALLS</span><p className={styles.resultBasis}>Every call has a transcript and an expected outcome. No live calls are included in these results.</p><ReportNumber label="Used to train" value="6,000" note="Model learning"/><ReportNumber label="Used to tune" value="2,000" note="Probability calibration"/><ReportNumber label="Used for the final test" value="2,000" note="800 scam · 800 legitimate · 400 unclear"/><small>The final 2,000 calls are kept separate until training and tuning are complete.</small></aside></header>
     <RiskWalkthrough report={report}/><System/><Evidence report={report}/><Recommendation report={report}/><TechnicalDetails report={report}/>
-    <footer><span>Call Screen Lab</span><span>Next.js · FastAPI · Twilio · Our classifier</span><span>Generated benchmark · clearly labelled</span></footer>
+    <footer><span>Call Screen Lab</span><span>Next.js · FastAPI · Twilio · Our classifier</span><span>Simulated benchmark · clearly labeled</span></footer>
   </main>
 }

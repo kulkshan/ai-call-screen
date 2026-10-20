@@ -23,3 +23,11 @@
 
 /* The guided call and the test set share a visible record identity. */
 .caseLink{display:grid;grid-template-columns:auto 1fr;gap:3px 8px;margin:14px 0;padding:11px 0;border-top:1px solid #dceafa;border-bottom:1px solid #dceafa}.caseLink span{font-size:9px;font-weight:800;letter-spacing:1px;color:#6685ad}.caseLink strong{font-size:12px;color:#214b81}.caseLink small{grid-column:1/-1;color:#6c84a5;font-size:11px}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}.metrics div{border-top:1px solid #dceafa;padding-top:11px}.metrics small{display:block;color:#6a85a9;font-size:10px;letter-spacing:.7px;font-weight:800}.metrics strong{display:block;color:#173b73;font-size:20px;margin-top:4px}.selectedCaseNote{margin:18px 0 0!important;padding:11px 13px;border-left:3px solid #72a9eb;background:#f4f9ff;color:#43688f!important;font-size:12px!important}.errorReview{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:16px;margin-top:18px;border-top:1px solid #dceafa;border-bottom:1px solid #dceafa;padding:23px 0}.errorReview h2{margin:7px 0;color:#102958;font-size:20px;line-height:1.24}.errorReview p{margin:0;color:#6681a4;font-size:12px;line-height:1.55}.errorReview article{padding:0 0 0 16px;border-left:2px solid #bcd8f5}.errorReview article small{display:block;color:#6685ad;font-size:9px;letter-spacing:1px;font-weight:800}.errorReview article strong{display:block;margin:8px 0;color:#224a80;font-size:14px}.errorReview article span{display:block;margin-top:8px;color:#6681a4;font-size:11px;line-height:1.4}@media(max-width:760px){.metrics{grid-template-columns:1fr}.errorReview{grid-template-columns:1fr}.errorReview article{padding:16px 0 0;border-left:0;border-top:1px solid #dceafa}}
+
+/* Keep the three-part demo inside a normal laptop viewport. */
+.demoGrid{grid-template-columns:minmax(250px,280px) minmax(0,1fr) minmax(270px,300px)}
+.demoGrid>*{min-width:0}
+@media(max-width:1100px){.demoGrid{grid-template-columns:minmax(240px,300px) minmax(0,1fr)}.decisionPanel{grid-column:1/-1}.decisionPlaceholder{min-height:180px}}
+@media(max-width:760px){.demoGrid{display:flex;flex-direction:column}.decisionPanel{grid-column:auto}}
+
+.featureList strong{max-width:58%;text-align:right;overflow-wrap:anywhere}
