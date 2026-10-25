@@ -4,6 +4,8 @@ A product data science case study for scam-call screening: catch harmful calls w
 
 **Public demo:** https://kulkshan.github.io/ai-call-screen/
 
+**68-second video:** https://kulkshan.github.io/ai-call-screen/call-screen-lab-demo.mp4
+
 **90-second tour:** [docs/RECRUITER_WALKTHROUGH.md](docs/RECRUITER_WALKTHROUGH.md)
 
 ## Preview

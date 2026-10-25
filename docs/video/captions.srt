@@ -1,0 +1,28 @@
+1
+00:00:00,000 --> 00:00:07,000
+Can Call Screen catch scams without blocking real callers?
+
+2
+00:00:07,000 --> 00:00:17,000
+Start with one simulated call from the final test set.
+
+3
+00:00:17,000 --> 00:00:28,000
+The classifier scores the transcript, checks the evidence, and chooses BLOCK.
+
+4
+00:00:28,000 --> 00:00:38,000
+One decision is a demo. A held-out test shows whether it works consistently.
+
+5
+00:00:38,000 --> 00:00:50,000
+Final test: 790 of 800 scams caught. Precision 93.9%. Recall 98.8%.
+
+6
+00:00:50,000 --> 00:00:59,000
+The remaining misses and false alarms show exactly what to improve next.
+
+7
+00:00:59,000 --> 00:01:08,000
+Next: human-reviewed transcripts, shadow testing, then a controlled holdout.
+
