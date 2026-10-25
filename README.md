@@ -4,6 +4,14 @@ A product data science case study for scam-call screening: catch harmful calls w
 
 **Public demo:** https://kulkshan.github.io/ai-call-screen/
 
+**90-second tour:** [docs/RECRUITER_WALKTHROUGH.md](docs/RECRUITER_WALKTHROUGH.md)
+
+## Preview
+
+![Guided Call Screen demo](docs/assets/guided-demo.png)
+
+![Evaluation case study](docs/assets/evaluation-report.png)
+
 ## What to try
 
 1. Run a simulated call through Call Screen.
@@ -64,6 +72,11 @@ These are simulated benchmark results. They do not estimate real-world Google Ca
 - `eval/` — benchmark generation and evaluation
 - `web/` — guided demo and case study
 - `docs/` — architecture, evaluation method, cost model, and limitations
+
+## Application materials
+
+- [90-second recruiter walkthrough](docs/RECRUITER_WALKTHROUGH.md)
+- [Résumé, LinkedIn, and interview copy](docs/APPLICATION_COPY.md)
 
 ## Run locally
 
